@@ -37,23 +37,23 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#93CEFF',
     paddingTop: 50,
   },
   card: {
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#D5E9FA',
     padding: 20,
     marginVertical: 10,
     marginHorizontal: 20,
     borderRadius: 10,
-    shadowColor: '#000',
+    shadowColor: '#0060CD',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.50,
     shadowRadius: 5,
     elevation: 5,
   },
   title: {
-    color: 'red',
+    color: '#05002D',
     fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 10,
