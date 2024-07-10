@@ -17,20 +17,21 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#D5E9FA',
+    backgroundColor: '#fffe00',
     padding: 20,
     marginVertical: 10,
     marginHorizontal: 20,
     borderRadius: 10,
-    shadowColor: '#0060CD',
+    shadowColor: '#000000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.50,
     shadowRadius: 5,
     elevation: 5,
   },
   title: {
-    color: '#05002D',
+    color: '#000000',
     fontSize: 30,
+    fontStyle: 'italic',
     fontWeight: 'bold',
     marginBottom: 10,
   },
