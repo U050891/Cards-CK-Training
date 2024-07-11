@@ -1,5 +1,6 @@
+// src/screens/HomeScreen.tsx
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, View, Image, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Button } from 'react-native-elements';
@@ -19,6 +20,7 @@ export default function HomeScreen({ navigation }: Props) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.container}>
+        <Image source={require('../../assets/asset-tr.png')} style={styles.headerImage} />
         <View style={styles.buttonContainer}>
           <Button
             title="Get Posts"
@@ -29,7 +31,7 @@ export default function HomeScreen({ navigation }: Props) {
           />
         </View>
         {loading ? (
-          <ActivityIndicator size="large" color="#0000ff" />
+          <ActivityIndicator size="large" color="#66FFDA" />
         ) : (
           posts.map(post => (
             <TouchableOpacity
@@ -48,22 +50,32 @@ export default function HomeScreen({ navigation }: Props) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#93CEFF',
+    backgroundColor: '#212121',
   },
   container: {
-    flex: 1,
+    flexGrow: 1,
     paddingTop: 50,
+  },
+  headerImageContainer: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  headerImage: {
+    width: 400,
+    height: 150,
+    resizeMode: 'contain',
   },
   buttonContainer: {
     margin: 20,
   },
   button: {
-    backgroundColor: '#007BFF',
+    backgroundColor: '#79D7FF',
     padding: 15,
     borderRadius: 10,
   },
   buttonTitle: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: '#000000'
   },
 });

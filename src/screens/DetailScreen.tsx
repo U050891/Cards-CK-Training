@@ -19,7 +19,7 @@ export default function DetailScreen({ route }: Props) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{post.title}</Text>
-      <Text>{post.body}</Text>
+      <Text style={styles.body}>{post.body}</Text>
     </View>
   );
 }
@@ -27,13 +27,18 @@ export default function DetailScreen({ route }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#83ADFF',
+    backgroundColor: '#141414',
     padding: 20,
   },
   title: {
-    color: '#05002D',
+    color: '#E8E8E8',
     fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 10,
+  },
+  body: {
+    color: '#E8E8E8',
+    fontSize: 18,
+    lineHeight: 24,
   },
 });
