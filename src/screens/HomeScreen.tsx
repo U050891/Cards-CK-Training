@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, ScrollView, TouchableOpacity, View, ActivityIndicator } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Button } from 'react-native-elements';
 import PostCard from '../components/PostCard';
@@ -16,36 +17,41 @@ export default function HomeScreen({ navigation }: Props) {
   const { posts, getPosts, loading } = usePosts();
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Get Posts"
-          onPress={getPosts}
-          buttonStyle={styles.button}
-          titleStyle={styles.buttonTitle}
-          loading={loading}
-        />
-      </View>
-      {loading ? (
-        <ActivityIndicator size="large" color="#0000ff" />
-      ) : (
-        posts.map(post => (
-          <TouchableOpacity
-            key={post.id}
-            onPress={() => navigation.navigate('Detail', { post })}
-          >
-            <PostCard post={post} />
-          </TouchableOpacity>
-        ))
-      )}
-    </ScrollView>
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView style={styles.container}>
+        <View style={styles.buttonContainer}>
+          <Button
+            title="Get Posts"
+            onPress={getPosts}
+            buttonStyle={styles.button}
+            titleStyle={styles.buttonTitle}
+            loading={loading}
+          />
+        </View>
+        {loading ? (
+          <ActivityIndicator size="large" color="#0000ff" />
+        ) : (
+          posts.map(post => (
+            <TouchableOpacity
+              key={post.id}
+              onPress={() => navigation.navigate('Detail', { post })}
+            >
+              <PostCard post={post} />
+            </TouchableOpacity>
+          ))
+        )}
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  safeArea: {
     flex: 1,
     backgroundColor: '#93CEFF',
+  },
+  container: {
+    flex: 1,
     paddingTop: 50,
   },
   buttonContainer: {
