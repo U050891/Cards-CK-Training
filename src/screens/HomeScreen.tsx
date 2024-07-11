@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity, Button, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity, View, ActivityIndicator } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Button } from 'react-native-elements';
 import PostCard from '../components/PostCard';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import { usePosts } from '../hooks/usePosts';
@@ -17,7 +18,13 @@ export default function HomeScreen({ navigation }: Props) {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.buttonContainer}>
-        <Button title="Get Posts" onPress={getPosts} />
+        <Button
+          title="Get Posts"
+          onPress={getPosts}
+          buttonStyle={styles.button}
+          titleStyle={styles.buttonTitle}
+          loading={loading}
+        />
       </View>
       {loading ? (
         <ActivityIndicator size="large" color="#0000ff" />
@@ -43,5 +50,14 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     margin: 20,
+  },
+  button: {
+    backgroundColor: '#007BFF',
+    padding: 15,
+    borderRadius: 10,
+  },
+  buttonTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
