@@ -22,7 +22,8 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "types": ["expo", "expo-blur"]
   },
   "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }
