@@ -27,7 +27,7 @@ export default function DetailScreen({ route }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFDF9',
+    backgroundColor: '#83ADFF',
     padding: 20,
   },
   title: {

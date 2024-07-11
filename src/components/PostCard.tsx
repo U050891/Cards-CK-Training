@@ -17,7 +17,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fffe00',
+    backgroundColor: '#83ADFF',
     padding: 20,
     marginVertical: 10,
     marginHorizontal: 20,
